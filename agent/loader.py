@@ -51,19 +51,32 @@ def load_units() -> dict:
 
 
 def load_helper() -> str:
-    """Returns the text content of data/helper.md."""
+    """Returns the text content of data/helper.md or DS_Helper.md."""
     helper_path = config.DATA_DIR / "helper.md"
     if helper_path.exists():
         return helper_path.read_text(encoding="utf-8")
+    root_helper = config.BASE_DIR / "DS_Helper.md"
+    if root_helper.exists():
+        return root_helper.read_text(encoding="utf-8")
     return ""
 
 
 if __name__ == "__main__":
+    import sys
+    if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+        try:
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+
     # Local self-test. Run from the project root with:
     #     python -m agent.loader
     # No API keys needed - this only reads your data/*.md files.
     print("=== agent/loader.py self-test ===\n")
     print(f"Reading from: {config.DATA_DIR}\n")
+
+    helper_text = load_helper()
+    print(f"Helper loaded: {len(helper_text)} chars (starts with: {helper_text[:60]!r})\n")
 
     units = load_units()
 

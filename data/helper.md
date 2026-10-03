@@ -1,31 +1,95 @@
-## Topic: Important Topics & Unit-Wise Weightage
-- **[CORE_TOPICS]**:
-  - **Unit 1 (Architecture & ER)**: 3-Schema Architecture, Physical vs Logical Data Independence, ER Diagram construction, ER to Relational Table reduction rules.
-  - **Unit 2 (Relational Model & SQL)**: Relational Algebra operators (Select, Project, Joins), SQL Joins & Subqueries, Integrity Constraints (Entity, Referential), differences (DELETE vs TRUNCATE vs DROP, DDL vs DML).
-  - **Unit 3 (Design & Normalization - Highest Priority)**: Finding Candidate Keys using Attribute Closure, Minimal/Canonical Cover, Normal Forms (1NF, 2NF, 3NF, BCNF, 4NF/MVD), Lossless Join & Dependency Preservation test.
-  - **Unit 4 (Transactions & Recovery)**: ACID properties, Precedence Graph cycle test for Conflict Serializability, Recoverable vs Cascadeless vs Strict schedules, Log-Based Recovery (Deferred vs Immediate Update).
-  - **Unit 5 (Concurrency Control)**: Two-Phase Locking (Basic 2PL, Strict 2PL, Rigorous 2PL), Timestamp Ordering Protocol, Validation-based protocol, Deadlock detection and recovery.
+# Data Structures (BCS301) — Study Priority Guide
+*Based on frequency analysis of PYQs from 2019-20 to 2025-26 (6 papers, 141 questions)*
 
-## Topic: High-Yield Numericals & 10-Mark Questions
-- **[KEY_PATTERNS]**:
-  - **Normalization Problem**: Given relation $R$ and set of FDs $F$, find all Candidate Keys, Prime/Non-Prime attributes, determine highest normal form, and decompose into 3NF / BCNF.
-  - **Serializability Schedule Problem**: Given concurrent schedule $S$, draw the Precedence Graph to test Conflict Serializability, find equivalent serial schedule, and test recoverability.
-  - **ER Design Problem**: Draw a complete ER diagram for a given system (e.g. University, Hospital, Company) and convert entities/relationships into relational schemas.
-  - **Relational Algebra & SQL**: Write RA expressions and SQL queries for a given multi-table schema.
-  - **Concurrency Comparison**: Explain 2PL vs Timestamp Ordering protocols with working diagrams and deadlock behavior.
+---
 
-## Topic: 2-Mark Short Answer Definitions & Key Differences
-- **[KEY_DEFINITIONS]**:
-  - **DDL vs DML**: DDL defines schema (`CREATE`, `ALTER`, `DROP`, `TRUNCATE` - auto-committed); DML manages data (`SELECT`, `INSERT`, `UPDATE`, `DELETE` - rollbackable).
-  - **DELETE vs TRUNCATE vs DROP**: `DELETE` removes selected rows (DML, slow, logged); `TRUNCATE` deletes all rows (DDL, fast); `DROP` deletes entire table structure.
-  - **Super Key vs Candidate Key**: Super Key is any attribute set uniquely identifying a tuple; Candidate Key is a minimal Super Key (no redundant attributes).
-  - **3NF vs BCNF**: 3NF allows prime attribute on RHS ($X \rightarrow Y$ requires $X$ is Super Key OR $Y$ is Prime); BCNF strictly requires $X$ is Super Key.
-  - **Lossless Join Rule**: $(R_1 \cap R_2) \rightarrow R_1$ OR $(R_1 \cap R_2) \rightarrow R_2$.
-  - **Conflict vs View Serializability**: Conflict serializable is tested via cycle-free Precedence Graph; View serializable includes blind-write schedules.
+## UNIT I — Introduction to Data Structures
+**High Priority (appeared almost every year):**
+- Asymptotic Notation / Time & Space Complexity / Big-O — appears in **every single year**, in Section A or C. Easiest guaranteed marks.
+- Multidimensional Array Address Calculation (Row Major / Column Major) — appears in **5 of 6 years**, almost always a numerical problem in Section B/C. Practice at least 3-4 variations.
+- Recursion (Tail Recursion, Iteration vs Recursion, Tower of Hanoi) — appears in **every year** in some form.
 
-## Topic: Exam Strategy, Time Management & Revision Guide
-- **[GUIDELINES]**:
-  - **Priority 1 (Must-Pass Core)**: Normalization (Candidate Keys, 2NF/3NF/BCNF), Conflict Serializability Precedence Graph, ACID properties, ER reduction rules.
-  - **Priority 2 (High Scoring)**: Relational Algebra queries, SQL Joins & Aggregate functions, 2PL locking protocols, 3-Schema Architecture & Data Independence.
-  - **Priority 3 (Theory & Buffer)**: Recovery techniques (Log-based, Checkpoints), Deadlock handling, MVD & 4NF, Timestamp Ordering.
-  - **Answer Presentation**: In 10-markers, always include a neat labeled diagram (Architecture, State transitions, Precedence Graph) and highlight key terms.
+**Medium Priority:**
+- Sparse Matrix representation.
+- Classification of Data Structures / Linear vs Nonlinear.
+
+**Low Priority / Rarely Asked:**
+- Pointer arrays, record structures — no direct PYQ found; know definitions only.
+
+**Quick Insight:** This unit is "safe scoring" territory — mostly short-answer/numerical, low effort-to-marks ratio. Master array address formulas and asymptotic notation comparisons first.
+
+---
+
+## UNIT II — Stacks & Queues
+**High Priority:**
+- Infix → Postfix Conversion (and evaluation using stack) — the **single most repeated long-answer question** across all 6 years. Practice the standard expression `A+(B*C-(D/E^F)*G)*H` — it has appeared verbatim multiple times.
+- Stack implementation (array/linked list), Push/Pop operations.
+- Circular Queue & Dequeue — recurring Section A/C topic.
+
+**Medium Priority:**
+- Balanced parentheses checking using stack.
+- Priority Queue (definition/significance).
+
+**Quick Insight:** If you only prepare one long-answer topic from this unit, make it **infix-to-postfix conversion with trace** — it's nearly guaranteed. Also revise stack-based applications (expression evaluation, parentheses matching, string reversal).
+
+---
+
+## UNIT III — Linked Lists
+**High Priority:**
+- Polynomial Representation & Addition using Linked List — appears in **4 of 6 years**, almost always a full long-answer (algorithm + C code).
+- Singly vs Doubly Linked List — advantages/disadvantages comparisons appear repeatedly.
+
+**Medium Priority:**
+- Linked list vs Array trade-offs.
+- Insert/delete node operations, concatenation of lists.
+
+**Low Priority:**
+- Circular Linked List, Dynamic Memory Allocation — no direct PYQs found; cover briefly for conceptual (Section A) questions only.
+
+**Quick Insight:** This is the **smallest unit by question volume**, but polynomial representation is a near-certain long question — don't skip the C code for it.
+
+---
+
+## UNIT IV — Trees & Graphs
+**This is the heaviest-weighted unit — expect 3-4 Section C questions from here.**
+
+**High Priority:**
+- Tree construction from given traversals (Inorder+Preorder/Postorder → find the third) — recurring long-answer.
+- Binary Search Tree (construction, search, BST vs Heap) — appears almost every year.
+- AVL Tree construction by insertion — appears in **4+ years**, often with the *same* number sequence (71,41,91,56,60,30,40,80,50,55) repeated across 2024-25 and 2025-26.
+- B-Tree construction/insertion/deletion (order 4 or 5) — recurring, with the same letter sequence (`agfbkdhmjesirxclntup`) reused across years.
+- Minimum Spanning Tree — Prim's Algorithm — appears almost every year; Kruskal's less frequent.
+- Shortest Path — Dijkstra's Algorithm — appears almost every year; Floyd-Warshall also recurring.
+- Special binary trees (Complete, Extended, Full, Threaded, Skewed) — frequent short-answer definitions.
+
+**Medium Priority:**
+- Graph representations (adjacency matrix/list) and terminology.
+- BFS/DFS traversal and differences.
+- Expression Trees, Huffman Coding.
+
+**Quick Insight:** **Memorize the AVL and B-Tree insertion sequences that repeat across years** — they are reused almost verbatim. Prim's + Dijkstra's are the highest-ROI graph algorithms to practice by hand on a sample graph.
+
+---
+
+## UNIT V — Searching, Sorting & Hashing
+**High Priority:**
+- Hashing & Collision Resolution (linear probing, quadratic probing, division method) — appears in **every single year**, often as a full long-answer with a numerical example.
+- Sorting algorithms with numerical tracing — Quick Sort, Merge Sort, Insertion Sort, Heap Sort all recur; **Quick Sort and Hashing together are the most repeated pairing**.
+
+**Medium Priority:**
+- Binary Search (concept, complexity, recursive implementation).
+- Selection Sort, Bubble Sort.
+
+**Low Priority:**
+- Radix Sort — no PYQs found at all; skip unless time permits.
+- Indexed Sequential Search — appeared only once.
+
+**Quick Insight:** Hashing is the **most consistently tested topic in the entire syllabus** — know linear probing, quadratic probing, and the division method cold, including worked numerical examples with insertion sequences.
+
+---
+
+## Overall Exam Strategy
+1. **Unit IV (Trees & Graphs)** carries the most long-answer weight — prioritize AVL trees, B-Trees, Prim's, and Dijkstra's.
+2. **Hashing (Unit V)** and **Infix-Postfix conversion (Unit II)** are the two most reliably repeated single topics across all 6 years — near-guaranteed questions.
+3. **Unit I** and parts of **Unit III** are lower-effort, high-certainty scoring zones — good for last-minute revision.
+4. Many numerical questions (AVL insertion sequences, B-Tree letter sequences, infix expressions, array address problems) **repeat near-verbatim across years** — solving past papers directly prepares you for a large share of the actual exam.

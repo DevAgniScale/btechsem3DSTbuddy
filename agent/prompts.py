@@ -5,8 +5,8 @@ Below is an overview of the Data Structures course syllabus:
 
 Analyze the student's question and classify it into exactly one of three categories:
 1. "generic": The question is asking for general Data Structures preparation advice, overall important topics across units, exam strategy, study time plans (e.g. 50 mins revision, 3 days plan, 1 night prep), numericals/definitions summary, or whole-syllabus question banks.
-2. "specific": The question is asking about a specific technical Data Structures concept, definition, algorithm, query, property, or specific unit topic (e.g. "What is 3NF?", "Explain ACID", "Difference between DDL and DML", "Relational algebra queries", "What is 2PL?").
-3. "unrelated": The question is completely unrelated to Data Structures or computer science database concepts (e.g. general chit-chat, other unrelated subjects, geography).
+2. "specific": The question is asking about a specific technical Data Structures concept, definition, algorithm, time complexity, or specific unit topic (e.g. "What is AVL Tree?", "Explain Dijkstra Algorithm", "Difference between BFS and DFS", "Infix to Postfix conversion", "What is Tail Recursion?").
+3. "unrelated": The question is completely unrelated to Data Structures or computer science programming/data structure concepts (e.g. general chit-chat, other unrelated subjects, geography).
 
 Question: {question}"""
 
