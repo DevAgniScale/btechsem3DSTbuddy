@@ -74,7 +74,7 @@ def handle_helper(state: AgentState) -> dict:
 
     return {
         "unit_no": 0,
-        "unit_name": "General DBMS Exam Guide & Strategy",
+        "unit_name": "General DS Exam Guide & Strategy",
         "topic": "Important Topics & Strategic Preparation",
         "related_pyqs": [],
         "answer": answer,
@@ -183,9 +183,9 @@ def generate_answer(state: AgentState) -> dict:
 
 
 def not_found(state: AgentState) -> dict:
-    """Fallback handler when question is not related to DBMS or cannot be matched."""
+    """Fallback handler when question is not related to DS or cannot be matched."""
     return {
-        "answer": "This question does not appear to be related to Database Management Systems (DBMS) or the syllabus. Please ask a DBMS-related question!",
+        "answer": "This question does not appear to be related to Data Structures or the syllabus. Please ask a DS-related question!",
         "topic": None,
         "related_pyqs": [],
     }

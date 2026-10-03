@@ -28,8 +28,8 @@ Instructions:
 - Use bold keywords and structured bullet points.
 - Keep the response impactful and under 1600 characters for Discord."""
 
-UNIT_PROMPT = """You are a syllabus classifier for a Data Structures (DBMS) course.
-Below is an overview of all units of the DBMS subject with their topics:
+UNIT_PROMPT = """You are a syllabus classifier for a Data Structures (DS) course.
+Below is an overview of all units of the DS subject with their topics:
 
 {syllabus}
 
